@@ -11,11 +11,11 @@
 </head>
 <body>
 <jsp:include page="me.jsp" />
-<div >
+<hr>
    <div >
-       <h1 align ="center" class="display-3">장바구니</h1>
+       <h1 align="center"  class="display-3">장바구니</h1>
    </div>
-</div>
+
 <hr>
 <div class="container">
   <div class="row">
@@ -64,15 +64,16 @@
     </table>
       <table width="100%">
         <tr>
-          <td align="left"><a href="./deleteCart.jsp?cartId=<%=cartId%>" 
+          <td align="right"><a href="./deleteCart.jsp?cartId=<%=cartId%>" 
                              class="btn btn-outline-danger">삭제하기</a></td>
-          <td align="right"><a href="./shippingInfo.jsp?cartId=<%=cartId%>" class="btn btn-outline-primary">주문하기</a></td>         
+          <td align="left"><a href="./shippingInfo.jsp?cartId=<%=cartId%>" class="btn btn-outline-primary">주문하기</a></td>         
         </tr>
      </table>
     <a href="./products.jsp" class="bnt bnt-secondary">&laquo; 쇼핑 계속하기</a>
   </div>
   <hr>
 </div>
+
 <jsp:include page="fo.jsp"/>
 </body>
 </html>
