@@ -68,7 +68,7 @@ function listDelivery(){
              <label class="col-sm-2">우편번호</label>
              <div class="col-sm-3">
                  <input name="zipcode" id="zipcode" type="text" class="form-control" value="<%=rs.getString("zipcode")!=null?rs.getString("zipcode"):""%>">
-                 <input type="button" onclick="Postcode()" value="우편번호 찾기"><br>
+                 <input type="button" onclick="Postcode()" class="btn btn-outline-secondary" value="우편번호 찾기"><br>
              </div>
          </div>
           <div class="form-group row">
