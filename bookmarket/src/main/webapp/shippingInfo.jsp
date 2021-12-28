@@ -3,6 +3,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html><html><head>
+.center{
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <meta charset="UTF-8">
 <title>배송 정보</title>
@@ -19,9 +21,11 @@ function listDelivery(){
 </head>
 <body>
 <jsp:include page="me.jsp" />
-<div class="jumbotron">
+<div align="center">
    <div class="container">
+   <hr>
    		<h1 class="display-3">배송 정보</h1>
+   <hr>
    </div>
 </div>
 <%@include file="dbconn.jsp" %>
@@ -35,8 +39,9 @@ function listDelivery(){
 	ResultSet rs=pstmt.executeQuery();
 	if(rs.next()){
 %>
-<div class="container">
-   <form name="frm" action="./processShippingInfo.jsp" class="form-horizontal" method="post">
+<div class="container mt-5" align="center">
+<div class="container" align="center" >
+   <form name="frm"action="./processShippingInfo.jsp" class="form-horizontal" method="post" >
          <input type="hidden" name="cartId" value="<%=request.getParameter("cartId") %>">
          <div class="form-group row">
              <label class="col-sm-2">배송지 명</label>
@@ -100,6 +105,7 @@ function listDelivery(){
          </div>
     <% }%>
    </form>
+</div>
 </div>
 <jsp:include page="fo.jsp"/>
 </body>

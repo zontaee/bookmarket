@@ -45,7 +45,7 @@
           <a class="nav-link text-dark">|</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-dark" href="/cart.jsp">장바구니<span class="badge bg-secondary">0</span>
+          <a class="nav-link text-dark" href="/bookmarket/cart.jsp">장바구니<span class="badge bg-secondary">0</span>
           </a>
         </li>
       </ul>

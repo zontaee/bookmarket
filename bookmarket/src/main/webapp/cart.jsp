@@ -21,7 +21,7 @@
   <div class="row">
    
   </div>
-  <div style="padding-top:50px;">
+  <div style="padding-top:50px;" >
     <table class="table table-hover">
       <tr>
         <th>상품</th><th>가격</th><th>수량</th><th>소계</th><th>비고</th>
@@ -69,7 +69,7 @@
           <td align="left"><a href="./shippingInfo.jsp?cartId=<%=cartId%>" class="btn btn-outline-primary">주문하기</a></td>         
         </tr>
      </table>
-    <a href="./products.jsp" class="bnt bnt-secondary">&laquo; 쇼핑 계속하기</a>
+    <a href="./products.jsp" class="bbtn btn-outline-primary">&laquo; 쇼핑 계속하기</a>
   </div>
   <hr>
 </div>
