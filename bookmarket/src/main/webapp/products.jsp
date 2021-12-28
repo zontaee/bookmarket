@@ -13,7 +13,7 @@
 </head>
 <body>
 <jsp:include page="me.jsp"/>
-<div class="jumbotron">
+<div >
   <div class="container">
      <h1 class="display-3"><fmt:message key="listTitle"/></h1>
   </div>

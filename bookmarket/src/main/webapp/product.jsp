@@ -85,7 +85,7 @@ function addToCart(){
 </head>
 <body>
 <%@ include file="me.jsp" %>
-<div class="jumbotron">
+<div >
     <div class="container">
       <h1 class="display-3">상품 정보</h1>
     </div>
