@@ -11,12 +11,16 @@
 </head>
 <body>
 <jsp:include page="me.jsp" />
-<hr>
-   <div >
-       <h1 align="center"  class="display-3">장바구니</h1>
-   </div>
+<div class="container mt-5">
+<div class="row">
+<div class="col-sm-1"></div>
+<div class="col-sm-10">
+  <h2 id="company"><b>장바구니</b></h2>
+  <hr>
+<pre>
 
-<hr>
+</pre>
+
 <div class="container">
   <div class="row">
    
@@ -45,12 +49,12 @@
           <form action="updateCartQty.jsp">
             <input type="number" id="qty" name="qty" value="<%=product.getQuantity() %>">
             <input type="hidden" name="id" value="<%=product.getProductId()%>">
-              <input type="submit" class="btn btn-primary btn-sm" value="수정">
+              <input type="submit" class="btn btn-outline-primary" value="수정">
           </form>    
            </td>
           <td><%=total %></td>
           <td><a href="./removeCart.jsp?id=<%=product.getProductId()%>" 
-                   class="badge badge-danger">삭제</a></td>
+                   class="btn btn-outline-secondary">삭제</a></td>
           </tr>    	 
       	<% }
       %>
@@ -65,13 +69,19 @@
       <table width="100%">
         <tr>
           <td align="right"><a href="./deleteCart.jsp?cartId=<%=cartId%>" 
-                             class="btn btn-outline-danger">삭제하기</a></td>
+                             class="btn btn-outline-secondary">삭제하기</a></td>
           <td align="left"><a href="./shippingInfo.jsp?cartId=<%=cartId%>" class="btn btn-outline-primary">주문하기</a></td>         
         </tr>
      </table>
-    <a href="./products.jsp" class="bbtn btn-outline-primary">&laquo; 쇼핑 계속하기</a>
+    <a href="./products.jsp" class="bbtn btn-outline-primary" role="button" >&laquo; 쇼핑 계속하기</a>
+    
   </div>
   <hr>
+</div>
+
+</div>
+<div class="col-sm-1"></div>
+</div>
 </div>
 
 <jsp:include page="fo.jsp"/>

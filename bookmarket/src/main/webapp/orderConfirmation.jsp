@@ -59,11 +59,16 @@
 </head>
 <body>
 <jsp:include page="me.jsp"/>
-<div class="jumbotron">
-    <div class="container">
-      <h1 class="display-3">주문 정보</h1>
-    </div>
-</div>
+<div class="container mt-5">
+<div class="row">
+<div class="col-sm-1"></div>
+<div class="col-sm-10">
+  <h2 id="company"><b>주문 정보</b></h2>
+  <hr>
+<pre>
+
+</pre>
+
 <div class="container col-8 alert alert-info" >
     <div class="text-center">
          <h1>영수증</h1>
@@ -82,7 +87,7 @@
       <table class="table table-hover">
         <tr>
          <th class="text-center">상품</th>
-         <th class="text-center">#</th>
+         <th class="text-center">수량</th>
          <th class="text-center">가격</th>
          <th class="text-center">소계</th>
         </tr>
@@ -113,11 +118,16 @@
       </table>
         
       <a href="./shippingInfo.jsp?cartId=<%=shipping_cartId%>" 
-                 class="btn btn-secondary" role="button">이전</a>  
-      <a href="./thanksCustomer.jsp" class="btn btn-success" role="button">주문완료</a>
-      <a href="./checkOutCancelled.jsp" class="btn btn-secondary" role="button">취소</a> 
+                 class="btn btn-outline-secondary" role="button">이전</a>  
+      <a href="./removeSession.jsp" class="btn btn-outline-primary" role="button">주문완료</a>
+      <a href="./checkOutCancelled.jsp" class="btn btn-outline-secondary" role="button">취소</a> 
     </div>    
 </div>
+</div>
+<div class="col-sm-1"></div>
+</div>
+</div>
+
 <jsp:include page="fo.jsp"/>
 </body>
 </html>
