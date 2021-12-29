@@ -3,8 +3,8 @@ package dto;
 import java.util.Objects;
 
 public class RecentProduct {
-	private String productId;   //상품 아이디
-	private String pname;       //상품명
+	private String productId;   //ISBN
+	private String pname;       //도서 제목
 	public RecentProduct() {}
 	public RecentProduct(String productId, String pname) {
 		this.productId = productId;

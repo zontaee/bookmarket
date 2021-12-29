@@ -10,10 +10,10 @@ public class Product implements Serializable {
 	private String productId; //ISBN
 	private String pname; //도서 제목
 	private String pwriter; //작가
-	private Integer unitPrice; //판매가
+	private int unitPrice; //판매가
 	private String category; //카테고리
 	private String publisher; //출판사
-	private int publishDate; //출판일자
+	private String publishDate; //출판일자
 	private String description; //한 줄 소개
 	private long unitsInStock; //재고 수
 	private String filename; //이미지 파일명
@@ -21,9 +21,9 @@ public class Product implements Serializable {
 	
 	//생성자
 	public Product() {}
-	public Product(String productId, String pname, Integer unitPrice) {
-		this.productId = productId;
+	public Product(String productId,String pname, Integer unitPrice) {
 		this.pname = pname;
+		this.productId = productId;
 		this.unitPrice = unitPrice;
 	}
 	
@@ -46,10 +46,10 @@ public class Product implements Serializable {
 	public void setPwriter(String pwriter) {
 		this.pwriter = pwriter;
 	}
-	public Integer getUnitPrice() {
+	public int getUnitPrice() {
 		return unitPrice;
 	}
-	public void setUnitPrice(Integer unitPrice) {
+	public void setUnitPrice(int unitPrice) {
 		this.unitPrice = unitPrice;
 	}
 	public String getCategory() {
@@ -64,10 +64,10 @@ public class Product implements Serializable {
 	public void setPublisher(String publisher) {
 		this.publisher = publisher;
 	}
-	public int getPublishDate() {
+	public String getPublishDate() {
 		return publishDate;
 	}
-	public void setPublishDate(int publishDate) {
+	public void setPublishDate(String publishDate) {
 		this.publishDate = publishDate;
 	}
 	public String getDescription() {
@@ -95,4 +95,5 @@ public class Product implements Serializable {
 		this.quantity = quantity;
 	}	
 	
+
 }

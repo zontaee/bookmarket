@@ -12,15 +12,15 @@
 <%@ include file="dbconn.jsp" %>
 <% request.setAttribute("rate", 5.0);%>
 <% double rate =(Double)request.getAttribute("rate");%>
-<%=rate %><br>
+<%--<%=rate %><br>--%>
 
 <%
 String id = request.getParameter("id");
-
-String sql="select * from product where productId=?";
+System.out.println("productId: " + id);
+String sql="select * from product where productId = ?";
 PreparedStatement pstmt = conn.prepareStatement(sql);
 pstmt.setString(1,id);
-ResultSet rs=pstmt.executeQuery();
+ResultSet rs = pstmt.executeQuery();
 Product product =null;
 if(rs.next()){
    product=new Product(id, rs.getString("pname"), rs.getInt("unitPrice"));        	
@@ -43,9 +43,11 @@ if(rs.next()){
  }
 %>
 <!DOCTYPE html><html><head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<title>product</title>
 <style>
 .star_rating{font-size: 0; letter-spacing: -4px;}
 .star_rating a{
@@ -91,7 +93,7 @@ function addToCart(){
     </div>
 </div>
 <%
-	sql="select * from product where productId=?";
+	sql="select * from product where productId = ?";
     pstmt = conn.prepareStatement(sql);
     pstmt.setString(1,id);
     rs=pstmt.executeQuery();
@@ -114,16 +116,17 @@ function addToCart(){
            %>
          </p>
        <h3><%=rs.getString("pname") %></h3>
-       <p><%=rs.getString("descriptoin") %>
-       <p><b>상품 코드 : </b><span class="badge badge-danger"><%=id%></span>
-       <p><b>제조사</b>:<%=rs.getString("publisher") %>
-       <p><b>분류</b>:<%=rs.getString("category") %>
-       <p><b>재고 수</b>:<%=rs.getString("unitsInStock") %>
+       <p><%=rs.getString("description") %>
+       <p><b>상품 코드</b> : <%=id%>
+       <p><b>제조사</b> : <%=rs.getString("publisher") %>
+       <p><b>분류</b> : <%=rs.getString("category") %>
+       <p><b>재고 수</b> : <%=rs.getLong("unitsInStock") %>
        <h4><%=rs.getInt("unitPrice") %>원</h4>
        <p><form name="addForm" action="./addCart.jsp?id=<%=id%>" method="post">
           <div class="col-md-2">
           <input type="hidden" name="rate"  id="rate" value="<%=rate%>">
           <input type="number" name="qty" value="0" class="form-control input-md">
+          <br>
           </div>
           <a href="#" class="btn btn-info" onclick="addToCart()">상품주문 &raquo;</a>
           <a href="./cart.jsp" class="btn btn-warning">장바구니 &raquo;</a>

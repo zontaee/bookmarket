@@ -6,13 +6,15 @@
    String id = request.getParameter("id");
    String sQty = request.getParameter("qty");
    int qty = Integer.parseInt(sQty);
+   System.out.println("id= "+ id);
+   System.out.println("qty= "+ sQty);
    
  //넘어온 파라미터가 없으면 products.jsp로 이동처리
    if(id == null || id.trim().equals("")){
  	   response.sendRedirect("products.jsp");
  	   return;
    }
-   String sql="select * from product where productid=?";
+   String sql="select * from product where productId=?";
    PreparedStatement pstmt=conn.prepareStatement(sql);
    pstmt.setString(1,id);
    ResultSet rs  = pstmt.executeQuery();
@@ -24,7 +26,9 @@
  	  response.sendRedirect("exceptionNoProductId.jsp");
     }else{    
    //상품등록리스트에서 상품정보 얻기
-      goods = new Product(id,rs.getString("pname"),rs.getInt("unitPrice")); 
+   System.out.println("panme= "+ id);
+   System.out.println("unitPrice= "+ id);
+      goods = new Product(id,rs.getString("productId"),rs.getInt("unitPrice")); 
    }
   
   //세션으로부터 장바구니 정보 얻기
@@ -37,7 +41,7 @@
 		  goodsQnt.setQuantity(qty);
 	   }
   }
-  
+  System.out.println("id= "+ id);
   //카트페이지로 이동하여 삭제후 내역확인
   //response.sendRedirect("cart.jsp");
 %>
