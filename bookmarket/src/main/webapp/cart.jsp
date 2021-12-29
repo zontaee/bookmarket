@@ -83,7 +83,9 @@
 <div class="col-sm-1"></div>
 </div>
 </div>
+<pre>
 
+</pre> 
 <jsp:include page="fo.jsp"/>
 </body>
 </html>

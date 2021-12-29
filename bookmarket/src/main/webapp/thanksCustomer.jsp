@@ -105,6 +105,9 @@ for(int i=0;i<cookies.length;i++){
 }
 System.out.println("로그찍음");
 %> 
+<pre>
+
+</pre> 
 <jsp:include page="fo.jsp"/>
 </body>
 </html>
