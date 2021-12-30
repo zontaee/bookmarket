@@ -26,7 +26,7 @@ function listDelivery(){
     String sql="select max(ifnull(seq,'')) seq ,max(ifnull(nickname,'')) nickName, "
               +" max(ifnull(country,'')) country, max(ifnull(zipcode,'')) zipcode, "
               +" max(ifnull(roadAddress,'')) roadAddress, max(ifnull(jibunAddress,'')) jibunAddress, "
-              +" max(ifnull(detailAddress,'')) detailAddress, max(ifnull(extraAddress,'')) extraAddress "
+              +" max(ifnull(detailAddress,'')) detailAddress"
     		  +" from delivery where seq=1";
 	PreparedStatement pstmt = conn.prepareStatement(sql);
 	ResultSet rs=pstmt.executeQuery();
@@ -93,7 +93,7 @@ function listDelivery(){
          <div class="form-group row">
              <label class="col-sm-2">참고항목</label>
              <div class="col-sm-3">
-                 <input name="extraAddress"id="extraAddress" type="text" class="form-control" value="<%=rs.getString("extraAddress")!=null?rs.getString("extraAddress"):""%>">
+                 
              </div>
          </div>
          <div class="form-group row">
@@ -147,11 +147,7 @@ function listDelivery(){
                 document.getElementById("jibunAddress").value = data.jibunAddress;
                 
                 // 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
-                if(roadAddr !== ''){
-                    document.getElementById("extraAddress").value = extraRoadAddr;
-                } else {
-                    document.getElementById("extraAddress").value = '';
-                }
+               
                 var guideTextBox = document.getElementById("guide");
                 // 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
                 if(data.autoRoadAddress) {
