@@ -1,0 +1,13 @@
+create table product (
+productId varchar(10) not null,
+pname varchar(300) null,
+pwriter varchar(45) null,
+unitPrice int null,
+category varchar(45) null,
+publisher varchar(45) null,
+publishDate varchar(45) null,
+descriptoin text null,
+unitsInStock mediumtext null,
+filename varchar(45) null,
+primary key(productId)
+);

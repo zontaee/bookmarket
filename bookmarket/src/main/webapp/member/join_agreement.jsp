@@ -10,10 +10,8 @@ Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-
 function chk(){
  var req = document.getElementById('req').checked;
-
  if(req){
   location.href='addMember.jsp'
  }else{
@@ -26,6 +24,8 @@ location.href="../wel.jsp";}
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>회원가입</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
 <div class="container mt-5">

@@ -1,0 +1,10 @@
+CREATE TABLE delivery (
+  seq int NOT NULL AUTO_INCREMENT,
+  nickName varchar(45) DEFAULT NULL,
+  country varchar(45) DEFAULT NULL,
+  zipcode varchar(5) DEFAULT NULL,
+  roadAddress varchar(100) DEFAULT NULL,
+  jibunAddress varchar(100) DEFAULT NULL,
+  detailAddress varchar(100) DEFAULT NULL,
+  PRIMARY KEY (seq)
+);

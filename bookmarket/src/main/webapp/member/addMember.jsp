@@ -106,6 +106,7 @@ function sendEmail(){
 <script>
 /* 글로벌 변수 */
 var isConfirm=false;
+
 function confirm(){
 	var cert1 = document.getElementById("cert").value;
 	var cert2= document.getElementById("cert_confirm").value;
@@ -124,6 +125,8 @@ function confirm(){
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <title>회원 가입</title>
 </head>
 <body>
@@ -188,7 +191,7 @@ function confirm(){
         <div class="form-group row">
               <label class="col-sm-2">이메일 인증</label>
               <div class="col-sm-3">
-                   <input type="button" value="네이버메일 인증"  class="btn btn-outline-success"  data-toggle="modal" data-target="#exampleModal">
+                   <input type="button" value="이메일 인증"  class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModal">
                    <input class="form-control" name="cert" type="password" id="cert" value="" readonly>
                    <input class="form-control" name="cert_confirm" id="cert_confirm" type="password" value="">
                    <input type="button" value="확인" class="btn btn-outline-success" onclick="confirm()">
@@ -267,14 +270,7 @@ function confirm(){
           </div>
        </div>
        <br>
-       <hr>
     </form>
- </div>   
- </div>
- <div class="col-sm-1"></div>
- </div>
- </div>
- </div>
 </div>
 <div class="col-sm-1"></div>
 </div>
@@ -306,8 +302,6 @@ function confirm(){
     </div>
   </div>
 </div>    
-</div>    
-  </div>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
     //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.

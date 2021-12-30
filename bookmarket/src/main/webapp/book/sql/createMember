@@ -1,0 +1,39 @@
+CREATE TABLE member(
+  cid VARCHAR(10) NOT NULL,
+  cpw VARCHAR(10) NOT NULL,
+  cname VARCHAR(10) NULL,
+  cmail VARCHAR(30) NULL,
+  cphone VARCHAR(30) NULL,
+  cbday VARCHAR(10) NULL,
+  caddr VARCHAR(100) NULL,
+  detailcaddr VARCHAR(100) NULL,
+  jibuncaddr VARCHAR(100) NULL,
+  extracaddr VARCHAR(100) NULL,
+  PRIMARY KEY (cid));
+  
+INSERT INTO member (cid, cpw, cname, cmail, cphone, cbday, caddr, detailcaddr, jibuncaddr, extracaddr) VALUES ('admin', 'admin1234', '관리자', 'admin@naver.com', '010-1111-1111', '20211111', '경기 성남시 분당구 판교역로 24', '1234', '경기 성남시 분당구 백현동 576-1', '백현동');
+INSERT INTO member (cid, cpw, cname, cmail, cphone, cbday, caddr, detailcaddr, jibuncaddr, extracaddr) VALUES ('hong', '1234', '홍길동', 'hong@naver.com', '010-1111-1111', '20211112', '경기 성남시 분당구 판교역로 24', '1234', '경기 성남시 분당구 백현동 576-1', '백현동');
+
+
+
+drop table member;
+
+CREATE TABLE member (
+  cid varchar(10) NOT NULL,
+  cname varchar(10) DEFAULT NULL,
+  cpw varchar(10) NOT NULL,
+  cbday varchar(10) DEFAULT NULL,
+  cmail varchar(30) DEFAULT NULL,
+  cphone varchar(20) DEFAULT NULL,
+  zipcode varchar(5) DEFAULT NULL,
+  roadaddr varchar(100) DEFAULT NULL,
+  jibuncaddr varchar(100) DEFAULT NULL,
+  detailcaddr varchar(100) DEFAULT NULL,
+  register_day varchar(50) DEFAULT NULL,
+  PRIMARY KEY (cid)
+);
+
+INSERT INTO member VALUES ('admin', '관리자', 'admin1234', '2021/12/12', 'admin@naver.com', '010-1111-1111', 41069, '대구 동구 첨단로8길 8', '대구 동구 신서동 1148', '1234', null);
+INSERT INTO member VALUES ('hong', '홍길동', '1234', '2021/12/12', 'hong@naver.com', '010-1111-1111', 41069, '대구 동구 첨단로8길 8', '대구 동구 신서동 1148', '1234', null);
+
+select * from member;

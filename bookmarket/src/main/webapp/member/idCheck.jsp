@@ -6,7 +6,7 @@
 <%
 	String id = request.getParameter("id");
      
-    String sql="select count(*) from member where id=?";
+    String sql="select count(*) from member where cid=?";
     PreparedStatement pstmt = conn.prepareStatement(sql);
     pstmt.setString(1,id);
     //id에 해당하는 결과가 없으면 0이 리턴, 있으면 1이 리턴

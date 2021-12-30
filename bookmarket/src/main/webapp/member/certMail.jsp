@@ -13,7 +13,7 @@
 <!DOCTYPE html><html><head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-<title>이메일 인증</title>
+<title>백두도서</title>
 <%
 String email=request.getParameter("email").trim();
 String password=request.getParameter("emailPassword").trim();

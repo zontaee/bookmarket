@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import mvc.database.DBConnection;
+import mvc.database.DBConnectionBook;
 import mvc.database.DBConnectionOracle;
 
 //싱글톤 
@@ -29,11 +29,11 @@ public class BoardDAO {
 	  ResultSet rs = null;
 	  
 	  String name = null;
-	  String sql = "select * from member where id = ?";
+	  String sql = "select * from member where cid = ?";
 	  
 	  try {
 		    //Mysql 접속용 DBConnection객체 
-		    conn = DBConnection.getConnection();
+		    conn = DBConnectionBook.getConnection();
 		    pstmt = conn.prepareStatement(sql);
 		    pstmt.setString(1, id); 
 		

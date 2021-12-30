@@ -6,17 +6,17 @@
 %>
 <%-- <%=sessionId%><br> --%>
 <sql:setDataSource  var="dataSource"  
-  url="jdbc:mysql://localhost:3306/Book" 
+  url="jdbc:mysql://localhost:3306/book" 
   driver="com.mysql.cj.jdbc.Driver"
   user="book"
   password="1234"/>
   
 <sql:update dataSource="${dataSource}" var="resultSet">
- delete from member where id=?
+ delete from member where cid=?
  <sql:param value="<%=sessionId%>"/>
 </sql:update>
 
 <c:if test="${resultSet>=1}">
      <c:import var="url" url="logoutMember.jsp"/>
-     <c:redirect url="resultMember.jsp"/>
+     <c:redirect url="resultMember.jsp?msg=3"/>
 </c:if>

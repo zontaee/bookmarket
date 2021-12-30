@@ -6,9 +6,9 @@
 	/* 문자셋 설정 */
   request.setCharacterEncoding("UTF-8"); 
     /* 파라미터 받기 */
-  String id=request.getParameter("cid");
-  String name=request.getParameter("cname");
-  String password=request.getParameter("cpw");
+  String id=request.getParameter("id");
+  String name=request.getParameter("name");
+  String password=request.getParameter("password");
   String year=request.getParameter("birthyy");
   String month=request.getParameter("birthmm");
   String day=request.getParameter("birthdd");
@@ -44,12 +44,13 @@
 <%=extraAddress %><br> --%>
 <%-- 데이터 셋 설정 --%>
 <sql:setDataSource var="dataSource"  
-     url="jdbc:mysql://localhost:3306/BookMarketDB" 
+     url="jdbc:mysql://localhost:3306/book" 
      driver="com.mysql.cj.jdbc.Driver" user="book" password="1234" />
      
 <%-- 입력처리 --%>     
 <sql:update dataSource="${dataSource}" var="resultSet">
-update member set cname=?,cpw=?,cbday=?,cmail=?,cphone=?,zipcode=?,roadaddr=?,jibuncaddr=?,detailcaddr=? where cid=?
+insert into member values (?,?,?,?,?,?,?,?,?,?,?)
+<sql:param value="<%=id%>"/>
 <sql:param value="<%=name %>"/>
 <sql:param value="<%=password %>"/>
 <sql:param value="<%=birth %>"/>
@@ -59,10 +60,10 @@ update member set cname=?,cpw=?,cbday=?,cmail=?,cphone=?,zipcode=?,roadaddr=?,ji
 <sql:param value="<%=roadAddress %>"/>
 <sql:param value="<%=jibunAddress %>"/>
 <sql:param value="<%=detailAddress %>"/>
-<sql:param value="<%=id%>"/> 
+<sql:param value="<%=timestamp %>"/>
 </sql:update>     
 
 <!-- 입력후 페이지 이동 처리, response.sendRedirect -->
 <c:if test="${resultSet >=1}">
-   <c:redirect url="resultMember.jsp?msg=0"/>
+   <c:redirect url="resultMember.jsp?msg=1"/>
 </c:if>

@@ -1,4 +1,4 @@
-package mvc.bbs.command;
+package mvc.bb.command;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,20 +6,20 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import mvc.bbs.model.BbsDAO;
-import mvc.bbs.model.BbsDTO;
+import mvc.bb.model.BbDAO;
+import mvc.bb.model.BbDTO;
 
 //페이징 처리
 //글 리스트 얻기
-public class BbsListAction implements ActionCommand {
+public class BbListAction implements BookCommand {
 	//게시글 페이지당 조회결과 건수 상수 선언
 	static final int LISTCOUNT = 10;
 	@Override
 	public String action(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		//등록된 글 목록 가져오기
 		//DB억세스 객체 생성
-		BbsDAO dao = BbsDAO.getInstance();
-		List<BbsDTO> bbsList = new ArrayList<BbsDTO>();
+		BbDAO dao = BbDAO.getInstance();
+		List<BbDTO> bblist = new ArrayList<BbDTO>();
 		//게시판 이동시 첫 페이지 설정
 		int pageNum=1;
 		int limit = LISTCOUNT;//초기값 10
@@ -34,17 +34,16 @@ public class BbsListAction implements ActionCommand {
 				
 		//DB로 부터 페이지당 갯수 별로 리스트 생성
 		//boardList = dao.getBoardList(pageNum, limit);
-		bbsList = dao.getBbsList(pageNum, limit, items, text);
-		System.out.println("bbsList건수:"+bbsList.size());
+		bblist = dao.getBbList(pageNum, limit, items, text);
+		System.out.println("bbList건수:"+bblist.size());
 		//int total_record = dao.getListCount();
-		int total_record = dao.getBbsCount(pageNum, limit, items, text);
+		int total_record = dao.getBbCount(pageNum, limit, items, text);
 		
 		//전체 글의 첫번째 번호
-		int firstNum=dao.getFirstNum();
-		int lastNum=dao.getLastNum();
+		int firstNum = dao.getFirstNum();
+		int lastNum = dao.getLastNum();
 		
-		
-		//전체 글 갯수 얻기1
+		//전체 글 갯수 얻기
 		int total_page;
 		
 		//페이징처리
@@ -67,12 +66,11 @@ public class BbsListAction implements ActionCommand {
 		//페이지 보정
 		if(endPage > finalPage) endPage = finalPage;
 		
-		
 		//list.jsp(view페이지로 결과 전달)
 		request.setAttribute("pageNum", pageNum);
 		request.setAttribute("total_page", total_page);
 		request.setAttribute("total_record", total_record);
-		request.setAttribute("bbslist", bbsList);
+		request.setAttribute("bblist", bblist);
 		request.setAttribute("startPage", startPage);
 		request.setAttribute("endPage", endPage);
 		request.setAttribute("finalPage",finalPage);
@@ -83,7 +81,7 @@ public class BbsListAction implements ActionCommand {
 		request.setAttribute("lastNum", lastNum);
 		
 		//이동할 페이지
-		return "./bbs/list.jsp";
+		return "./bb/blist.jsp";
 	}
 
 }

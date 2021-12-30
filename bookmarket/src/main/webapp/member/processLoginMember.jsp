@@ -10,7 +10,7 @@
 %>
 <%--데이타 셋 설정 --%>
 <sql:setDataSource  var="dataSource"   
-      url="jdbc:mysql://localhost:3306/book"
+      url="jdbc:mysql://localhost:3306/BookMarketDB"
       user="book" password="1234"
       driver="com.mysql.cj.jdbc.Driver" />
       
@@ -30,4 +30,4 @@
 </c:forEach>
 
 <%-- 조회 결과 데이타가 없으면 다시 로그인 페이지로 이동,이동시 error의 파라미터값을 1로 전달. --%>
-<c:redirect url="login_Member.jsp?error=1"/>
+<c:redirect url="login_member.jsp?error=1"/>

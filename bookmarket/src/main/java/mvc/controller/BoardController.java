@@ -19,7 +19,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import mvc.bbs.command.ActionCommand;
 import mvc.command.Command;
 import mvc.model.BoardDAO;
 import mvc.model.BoardDTO;
